@@ -16,8 +16,8 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository repository;
 	
-//	@Autowired
-//	private EnderecoService enderecoService;
+	@Autowired
+	private EnderecoService enderecoService;
 	
 	public Cliente saveCliente(Cliente cliente) {
 		return repository.save(cliente);
@@ -47,7 +47,7 @@ public class ClienteService {
 		existCliente.setCpf(cliente.getCpf());
 		existCliente.setTelefone(cliente.getTelefone());
 		existCliente.setEmail(cliente.getEmail());
-//		enderecoService.updateEndereco(cliente.getEndereco());
+		enderecoService.updateEndereco(cliente.getEndereco());
 		return repository.save(existCliente);		
 	}
 	
