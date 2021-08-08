@@ -18,8 +18,8 @@ import org.hibernate.validator.constraints.br.CPF;
 
 
 @Entity
-@Table(name ="cliente")
-public class Cliente implements Serializable{
+@Table(name ="user")
+public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,22 +28,23 @@ public class Cliente implements Serializable{
 
 	@Size(min = 3, max = 100)
 	@NotNull(message = "Nome não pode ser nulo")
-	private String nome;
+	private String name;
 	
 	@CPF
 	@NotNull(message = "Somente CPF válido")
 	private String cpf;
 	
-	@OneToOne(targetEntity= Endereco.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	private Endereco endereco;
+	@OneToOne(targetEntity= Address.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	private Address address;
 	
 	@NotNull
-	private String telefone;
+	private String phone;
 	
 	@Email(message = "Somente e-mail válido")
 	@NotNull
 	private String email;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -52,12 +53,12 @@ public class Cliente implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCpf() {
@@ -68,20 +69,20 @@ public class Cliente implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -114,7 +115,7 @@ public class Cliente implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cliente other = (Cliente) obj;
+		User other = (User) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -125,8 +126,8 @@ public class Cliente implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", telefone="
-				+ telefone + ", email=" + email + "]";
+		return "Cliente [id=" + id + ", name=" + name + ", cpf=" + cpf + ", address=" + address + ", phone="
+				+ phone + ", email=" + email + "]";
 	}
 	
 }

@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "endereco")
-public class Endereco implements Serializable{
+public class Address implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -53,9 +53,9 @@ public class Endereco implements Serializable{
    
 	private Integer siafi;
 	
-	@OneToOne(targetEntity=Cliente.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne(targetEntity=User.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn
-	private Cliente cliente;
+	private User cliente;
 	
 	public Long getId() {
 		return id;
@@ -140,7 +140,7 @@ public class Endereco implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Endereco other = (Endereco) obj;
+		Address other = (Address) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
