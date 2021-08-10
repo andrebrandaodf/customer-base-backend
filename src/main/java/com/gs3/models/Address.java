@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
-@Table(name = "endereco")
+@Table(name = "address")
 public class Address implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -53,9 +53,9 @@ public class Address implements Serializable{
    
 	private Integer siafi;
 	
-	@OneToOne(targetEntity=User.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne(targetEntity=Client.class, fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn
-	private User cliente;
+	private Client client;
 	
 	public Long getId() {
 		return id;
@@ -126,38 +126,10 @@ public class Address implements Serializable{
 	}
 	
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Address other = (Address) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-	@Override
 	public String toString() {
-		return "Endereco [id=" + id + ", "
-				+ "cep=" + cep + ", "
-						+ "logradouro=" + logradouro + 
-						", bairro=" + bairro
-				+ ", localidade=" + localidade +
-				", uf=" + uf + 
-				", complemento=" + complemento + 
-				", cliente=" + cliente
-				+ "]";
-	}	
+		return "Address [id=" + id + ", cep=" + cep + ", logradouro=" + logradouro + ", bairro=" + bairro
+				+ ", localidade=" + localidade + ", uf=" + uf + ", complemento=" + complemento + ", ddd=" + ddd
+				+ ", gia=" + gia + ", ibge=" + ibge + ", siafi=" + siafi + ", client=" + client + "]";
+	}
+	
 }
