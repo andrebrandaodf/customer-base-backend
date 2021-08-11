@@ -12,17 +12,17 @@
 # Add-ons
 Este projeto foi criado para funcionar junto ao frontend 
 [desafio-gs3-frontend](https://github.com/andrebrandaodf/desafio-gs3-frontend).
-Informações sobre como rodar o projeto frontend se encontram [README.md](https://github.com/andrebrandaodf/desafio-gs3-frontend#readme). 
+Informações sobre como rodar o projeto frontend se encontram [README.md](https://github.com/andrebrandaodf/customer-base-frontend#readme). 
 
 # Executando projeto
 
-1. Entrar na pasta do projeto `desafio-gs3` 
+1. Entrar na pasta do projeto `customer-base-backend` 
 
-	`cd desafio-gs3`
+	`cd customer-base-backend`
  
 2. Executar o servidor spring 
 
-	`./mvnw spring-boot:run`
+	`mvn spring-boot:run`
 
 # Métodos CRUD Client
 
