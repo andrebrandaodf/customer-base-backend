@@ -11,7 +11,7 @@
 
 # Add-ons
 Este projeto foi criado para funcionar junto ao frontend 
-[desafio-gs3-frontend](https://github.com/andrebrandaodf/desafio-gs3-frontend).
+[customer-base-frontend](https://github.com/andrebrandaodf/customer-base-frontend).
 Informações sobre como rodar o projeto frontend se encontram [README.md](https://github.com/andrebrandaodf/customer-base-frontend#readme). 
 
 # Executando projeto
