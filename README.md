@@ -1,4 +1,4 @@
-# Cadastro de clientes - Desafio GS3!
+# Cadastro de clientes - GS3!
 
 * Java 8
 * [Spring Boot 2.3.4.RELEASE](https://start.spring.io/)
