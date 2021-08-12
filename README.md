@@ -1,7 +1,7 @@
 # Cadastro de clientes -  Showcase app!
 
 * Java 8
-* [Spring Boot 2.3.4.RELEASE](https://start.spring.io/)
+* [Spring Boot 2.5.3.RELEASE](https://start.spring.io/)
 * Mysql Driver
 * [IDE SpringTools](https://spring.io/tools)
 * Spring Web
